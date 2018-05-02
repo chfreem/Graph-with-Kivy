@@ -1,0 +1,54 @@
+#:kivy 1.0.9
+
+<GraphSession>:
+    graph_now: button_to_graph 
+#    gas_pedal:  accelerate_button
+#    brake_pedal:  slow_down_button
+
+#    HorizontalButton:
+#        id:  slow_down_button
+#        on_press:  root.brake()
+#        x:  root.x + 2
+#        center_y:  (root.height) * #.3
+#
+#    VerticalButton:
+#        id:  accelerate_button
+#        on_press:  root.accelerate()
+#        x:  root.width - 2#0
+#        center_y:  root.height * #.3
+
+    Button:
+        id:  button_to_graph
+        center_x:  root.width / 2.0
+        center_y:  root.top / 2.0
+
+
+#<HorizontalButton>:
+#    size:  400, 150
+#    canvas:
+#        Color:
+##           blue
+#            rgba: (0, 0, 1, .6)
+#        Rectangle:
+#            pos:  self.pos
+#            size:  self.size
+#
+#
+#<VerticalButton>:
+#    size:  150, 300
+#    canvas:
+#        Color:
+##           red
+#            rgba: (1, 0, 0, .9)
+#        Rectangle:
+#            pos:  self.pos
+#            size:  self.size
+#
+
+<Button>:
+#    size:  150, 150
+    canvas:
+        Color:
+#           green
+            rgba: (0.255, 0.749, 0.247, .5)
+    text:  "Plot a graph with me!"
