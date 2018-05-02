@@ -1,23 +1,10 @@
 from kivy.app import App
 from kivy.uix.widget import Widget
-from kivy.properties import NumericProperty, ObjectProperty
+from kivy.properties import ObjectProperty
 import matplotlib.pyplot as plt
 import numpy as np
-#from kivy.clock import Clock
-#from kivy.uix.behaviors import ButtonBehavior
 
 
-#class HorizontalButton(ButtonBehavior, Widget):
-#    def __init__(self, **kwargs):
-#        super(HorizontalButton, self).__init__(**kwargs)
-#
-#
-#class VerticalButton(ButtonBehavior, Widget):
-#    def __init__(self, **kwargs):
-#        super(VerticalButton, self).__init__(**kwargs)
-#    pass
-#
-#
 class Button(Widget):
     pass
 
@@ -27,17 +14,22 @@ class GraphSession(Widget):
         super(GraphSession, self).__init__()
 
     graph_now =  ObjectProperty(None)
-#    gas_pedal =  ObjectProperty(None)
-#    brake_pedal =  ObjectProperty(None)
-
-#    speed = NumericProperty(0)
 
     def create_graph(self):
-        pass
+        x = np.linspace(0, 2, 100)
 
-#    def accelerate(self):
-#        self.speed = self.speed * 1.1 + 1.0
+        plt.plot(x, x, label = 'linear')
+        plt.plot(x, x**2, label = 'quadratic')
+        plt.plot(x, x**3, label = 'cubic')
 
+        plt.xlabel('position (m)')
+        plt.ylabel('height (m)')
+
+        plt.title("This is My Plot")
+
+        plt.legend()
+
+        plt.show()
 
 class GraphAttemptApp(App):
     def build(self):
